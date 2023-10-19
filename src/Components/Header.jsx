@@ -1,8 +1,10 @@
 import React from 'react'
 import {Navbar, Container, Nav, Button, Badge} from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 function Header() {
+    const wishlist = useSelector((state) => state.wishlistReducer)
     return (
         <Navbar expand="lg" className="bg-primary" style={{position:"sticky", top:"0", zIndex: "1000"}}>
             <Container>
@@ -18,7 +20,7 @@ function Header() {
                         </Link></Nav.Link>
                         <Nav.Link><Link to={'/wishlist'} style={{textDecoration: "none"}} className='text-dark'>
                             <Button variant="secondary">
-                                Wishlist <Badge bg="success">9</Badge>
+                                Wishlist <Badge bg="success">{ wishlist.length }</Badge>
                                 <span className="visually-hidden">Shopping Wishlist</span>
                             </Button>
                         </Link></Nav.Link>
