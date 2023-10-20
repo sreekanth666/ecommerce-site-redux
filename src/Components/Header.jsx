@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     const wishlist = useSelector((state) => state.wishlistReducer)
+    const cart = useSelector((state) => state.cartReducer)
     return (
         <Navbar expand="lg" className="bg-primary" style={{position:"sticky", top:"0", zIndex: "1000"}}>
             <Container>
@@ -14,7 +15,7 @@ function Header() {
                     <Nav className="ms-auto">
                         <Nav.Link><Link to={'/cart'} style={{textDecoration: "none"}} className='text-dark'>
                             <Button variant="secondary">
-                                Cart <Badge bg="success">9</Badge>
+                                Cart <Badge bg="success">{cart.length}</Badge>
                                 <span className="visually-hidden">Shopping Cart</span>
                             </Button>
                         </Link></Nav.Link>
