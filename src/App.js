@@ -1,9 +1,9 @@
 import './App.css';
-import Home from './Pages/Home'
+import Home from './pages/Home'
 import { Routes, Route } from 'react-router-dom'
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import WishList from './Pages/WishList'
+import WishList from './pages/WishList'
 import Cart from './Pages/Cart'
 
 function App() {
